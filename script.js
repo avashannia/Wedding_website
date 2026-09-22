@@ -1,4 +1,4 @@
-// ---------- fixed nav visibility ----------
+
   const fixedNav = document.getElementById('fixedNav');
   const heroEl = document.getElementById('home');
   const io = new IntersectionObserver((entries) => {
@@ -74,12 +74,11 @@
   document.getElementById('prevBtn').addEventListener('click', () => track.scrollBy({ left: -280, behavior: 'smooth' }));
   document.getElementById('nextBtn').addEventListener('click', () => track.scrollBy({ left: 280, behavior: 'smooth' }));
 
-  // ---------- RSVP submit ----------
-  // Replace GOOGLE_APPS_SCRIPT_URL with your deployed Google Apps Script Web App URL.
-  // The matching backend code to paste into Extensions > Apps Script is in
-  // google-apps-script/Code.gs — see that file for full setup steps.
-  const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwWYm7cx7sNSLX8Zm5xHPFeEk5B9BuIFyw9BIqDYHv7tSsKPnyu0fMlSalanH7t2k6b7g/exec';
 
+  // ---------- RSVP submit ----------
+  // This is your deployed Google Apps Script Web App URL.
+  const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw_JWnf078a3iN_aPiOdV_GrerXcGy8Raxvsh9XwFGOQb996B4f96_3FFP7kP-VgPnl-g/exec';
+ 
   document.getElementById('rsvpForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -91,24 +90,19 @@
       notes: form.notes.value,
       submittedAt: new Date().toISOString()
     };
-
+ 
     status.textContent = 'Sending…';
     status.classList.add('show');
-
+ 
     try {
-      if (GOOGLE_APPS_SCRIPT_URL.startsWith('https://script.google.com/macros/s/AKfycbwWYm7cx7sNSLX8Zm5xHPFeEk5B9BuIFyw9BIqDYHv7tSsKPnyu0fMlSalanH7t2k6b7g/exec')) {
-        // No endpoint configured yet — just confirm locally so the flow is testable.
-        await new Promise(r => setTimeout(r, 500));
-      } else {
-        // no-cors: Apps Script Web Apps don't return a readable response cross-origin,
-        // so we optimistically confirm once the request has been sent.
-        await fetch(GOOGLE_APPS_SCRIPT_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-      }
+      // no-cors: Apps Script Web Apps don't return a readable response cross-origin,
+      // so we optimistically confirm once the request has been sent.
+      await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
       status.textContent = 'Thank you — your RSVP has been received.';
       form.reset();
     } catch (err) {
