@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Panganiban &amp; Argoso — 12.15.26</title>
     <link rel="icon" href="./assets/icon header.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,189 +12,271 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-        <!-- hero area -->
-        <section id="home" class="hero">
-            <div class="envelope-wrap">
-                <img src="./assets/hero area-envelope.png" alt="Wedding invitation envelope" width="1000" height="1000">
-            </div>
 
-                <!-- nav bar -->
-                <nav class="pill-nav" aria-label="Primary">
-                    <button type="button" data-nav="home" class="active" aria-label="Home"><i class="fa-solid fa-house"></i></button>
-                    <button type="button" data-nav="map" aria-label="Open map"><i class="fa-solid fa-map-location-dot"></i></button>
-                    <button type="button" data-nav="rsvp" aria-label="Open RSVP"><i class="fa-solid fa-envelope-open-text"></i></button>
-                </nav>
+    <!-- top-center fixed nav (always visible) -->
+    <nav class="pill-nav nav-top" id="topNav" aria-label="Primary">
+        <button type="button" data-nav="home" class="active" aria-label="Home"><i class="fa-solid fa-house"></i></button>
+        <button type="button" data-nav="map" aria-label="Open map"><i class="fa-solid fa-map-location-dot"></i></button>
+        <button type="button" data-nav="rsvp" aria-label="Open RSVP"><i class="fa-solid fa-envelope-open-text"></i></button>
+    </nav>
 
-                <nav class="pill-nav nav-fixed" id="fixedNav" aria-label="Quick navigation">
-                    <button type="button" data-nav="home" aria-label="Home"><i class="fa-solid fa-house"></i></button>
-                    <button type="button" data-nav="map" aria-label="Open map"><i class="fa-solid fa-map-location-dot"></i></button>
-                    <button type="button" data-nav="rsvp" aria-label="Open RSVP"><i class="fa-solid fa-envelope-open-text"></i></button>
-                </nav>
-        </section>
+    <!-- hero area -->
+    <section id="home" class="hero">
+        <div class="envelope-wrap">
+            <img src="./assets/hero area-envelope.png" alt="Wedding invitation envelope" width="1000" height="1000">
+        </div>
+    </section>
 
-        <!-- second area -->
-        <section class="panel-maroon" aria-label="Couple names and date">
-            <div class="lace-frame">
-                <img class="lace-frame-img" src="./assets/title hero area.png" alt="" aria-hidden="true" width="1000" height="800">
-                    <!--<div class="lace-content">
-                        <p class="names">Panganiban &amp; Argoso</p>
-                        <p class="subtitle">Panganiban &amp; Argoso Nuptials</p>
-                        <p class="date-line">12 . 15 . 26</p>
-                    </div>-->
-            </div>
-        </section>
+    <!-- second area -->
+    <section class="panel-maroon" aria-label="Couple names and date">
+        <div class="lace-frame">
+            <img class="lace-frame-img" src="./assets/title hero area.png" alt="" aria-hidden="true" width="1000" height="800">
+            <!--<div class="lace-content">
+                <p class="names">Panganiban &amp; Argoso</p>
+                <p class="subtitle">Panganiban &amp; Argoso Nuptials</p>
+                <p class="date-line">12 . 15 . 26</p>
+            </div>-->
+        </div>
+    </section>
 
-        <!-- third (title for stamps)-->
-        <section class="stamps-section" aria-label="Wedding details">
-            <div class="stamps-heading">
-                <h2>Everything You Need to Know</h2>
-                <p>Tap a stamp for the details</p>
-            </div>
-                </div>
+    <!-- third (title for stamps)-->
+    <section class="stamps-section" aria-label="Wedding details">
+        <div class="stamps-heading">
+            <h2>Everything You Need to Know</h2>
+            <p>Swipe a stamp for the details</p>
+        </div>
 
-            <div class="stamp-track-wrap">
-                <button class="track-arrow prev" id="prevBtn" aria-label="Previous card"><i class="fa-solid fa-chevron-left"></i></button>
-                <div class="stamp-track" id="stampTrack" role="list">
-                    <article class="stamp-card" role="listitem" tabindex="0" data-open="dress">
-                        <div class="stamp-top"><span>'26</span><span>1st</span></div>
-                        <i class="fa-solid fa-shirt stamp-icon"></i>
-                        <h3 class="stamp-title">Dress Code &amp; Timeline</h3>
-                        <p class="stamp-desc">What to wear and how the day unfolds</p>
-                        <div class="stamp-bottom">Panganiban · Argoso</div>
-                    </article>
+        <div class="carousel-viewport" id="carouselViewport">
+            <div class="stamp-track" id="stampTrack" role="list">
+                <article class="stamp-card" role="listitem" tabindex="0" data-open="dress">
+                    <div class="stamp-top"><span>'26</span><span>1st</span></div>
+                    <i class="fa-solid fa-shirt stamp-icon"></i>
+                    <h3 class="stamp-title">Dress Code &amp; Timeline</h3>
+                    <p class="stamp-desc">What to wear and how the day unfolds</p>
+                    <div class="stamp-bottom">Panganiban · Argoso</div>
+                </article>
 
-                    <article class="stamp-card is-center" role="listitem" tabindex="0" data-open="map">
-                        <div class="stamp-top"><span>'26</span><span>2nd</span></div>
-                        <i class="fa-solid fa-map-location-dot stamp-icon"></i>
-                        <h3 class="stamp-title">Ceremony &amp; Reception</h3>
-                        <p class="stamp-desc">Venue details and directions</p>
-                        <div class="stamp-bottom">Panganiban · Argoso</div>
-                    </article>
+                <article class="stamp-card" role="listitem" tabindex="0" data-open="map">
+                    <div class="stamp-top"><span>'26</span><span>2nd</span></div>
+                    <i class="fa-solid fa-map-location-dot stamp-icon"></i>
+                    <h3 class="stamp-title">Ceremony &amp; Reception</h3>
+                    <p class="stamp-desc">Venue details and directions</p>
+                    <div class="stamp-bottom">Panganiban · Argoso</div>
+                </article>
 
-                    <article class="stamp-card" role="listitem" tabindex="0" data-open="rsvp">
-                        <div class="stamp-top"><span>'26</span><span>3rd</span></div>
-                        <i class="fa-solid fa-envelope-open-text stamp-icon"></i>
-                        <h3 class="stamp-title">RSVP</h3>
-                        <p class="stamp-desc">Let us know you're coming</p>
-                        <div class="stamp-bottom">Panganiban · Argoso</div>
-                    </article>
-                </div>
+                <article class="stamp-card" role="listitem" tabindex="0" data-open="rsvp">
+                    <div class="stamp-top"><span>'26</span><span>3rd</span></div>
+                    <i class="fa-solid fa-envelope-open-text stamp-icon"></i>
+                    <h3 class="stamp-title">RSVP</h3>
+                    <p class="stamp-desc">Let us know you're coming</p>
+                    <div class="stamp-bottom">Panganiban · Argoso</div>
+                </article>
 
-                <button class="track-arrow next" id="nextBtn" aria-label="Next card"><i class="fa-solid fa-chevron-right"></i></button>
-            </div>
-        </section>
-
-        <!-- footer -->
-        <footer class="footer-bar">
-            <span>Where love blooms, Panganiban &amp; Argoso — December 15, 2026</span>
-            <span>Designed by Shannia Ava A. Pacleb</span>
-        </footer>
-
-            <!-- modal for dress code/timeline (third) -->
-            <div class="modal-overlay" id="modal-dress" aria-hidden="true">
-                <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="dressTitle">
-                    <div class="modal-head">
-                        <h3 id="dressTitle">Dress Code &amp; Timeline</h3>
-                        <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-                    </div>
-
-                            <p class="venue-addr" style="margin-bottom:6px;">Garden Formal — earthy greens, wine, and cream tones. Please avoid white and bright florals.</p>
-                                <div class="dress-swatches" aria-hidden="true">
-                                    <span class="swatch" style="background:#5a1f30"></span>
-                                    <span class="swatch" style="background:#532337"></span>
-                                    <span class="swatch" style="background:#435525"></span>
-                                    <span class="swatch" style="background:#4f5a32"></span>
-                                    <span class="swatch" style="background:#ac8e85"></span>
-                                </div>
-
-                                    <ul class="timeline-list">
-                                        <li><span class="tl-time">1:00 PM</span><span class="tl-label">Guests Arrive</span></li>
-                                        <li><span class="tl-time">1:30 PM</span><span class="tl-label">Ceremony Begins</span></li>
-                                        <li><span class="tl-time">4:00 PM</span><span class="tl-label">Cocktails</span></li>
-                                        <li><span class="tl-time">6:00 PM</span><span class="tl-label">Dinner</span></li>
-                                        <li><span class="tl-time">8:30 PM</span><span class="tl-label">Dancing</span></li>
-                                        <li><span class="tl-time">9:00 PM</span><span class="tl-label">Send Off</span></li>
-                                    </ul>
-                                </div>
-                                </div>
-
-            <!-- modal for map (third) -->
-            <div class="modal-overlay" id="modal-map" aria-hidden="true">
-                <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mapTitle">
-                    <div class="modal-head">
-                        <h3 id="mapTitle">Getting There</h3>
-                        <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-                    </div>
-
-                    <div class="tab-row" role="tablist">
-                        <button class="tab-btn active" data-pane="ceremony" role="tab" aria-selected="true">Ceremony</button>
-                        <button class="tab-btn" data-pane="reception" role="tab" aria-selected="false">Reception</button>
-                    </div>
-
-                        <div class="map-pane active" data-pane="ceremony">
-                            <div class="map-placeholder">
-                                <span><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.0315067443726!2d121.15774577594091!3d14.597280577156257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b8b089fa70bb%3A0x3a2922d867e8bd24!2sParish%20of%20the%20Immaculate%20Heart%20of%20Mary%20(Diocese%20of%20Antipolo)!5e0!3m2!1sen!2sph!4v1790072441594!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></span>
-                            </div>
-                                <p class="venue-name">Parish of the Immaculate Heart of Mary (Diocese of Antipolo)</p>
-                                <p class="venue-addr">Daang Bakal Rd, Antipolo, 1870 Rizal</p>
-                                    <a class="map-link" href="https://maps.app.goo.gl/XnYdXXuiNPdWwJX39" target="_blank" rel="noopener">
-                                        <i class="fa-solid fa-diamond-turn-right"></i> Get directions
-                                </a>
-                        </div>
-
-                        <div class="map-pane" data-pane="reception">
-                            <div class="map-placeholder">
-                                <span><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.4702229044174!2d121.1643809!3d14.572261199999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c795c61bfc91%3A0x35b4322827633c80!2sTimmy%20in%20the%20Woods!5e0!3m2!1sen!2sph!4v1790072395099!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></span>
-                            </div>
-                                <p class="venue-name">Timmy in the Woods</p>
-                                <p class="venue-addr">#3 Mount Everest Avenue, Goldenhills Subdivision, Antipolo, 1870 Rizal</p>
-                                    <a class="map-link" href="https://maps.app.goo.gl/Njo3QoFitmoHEnECA" target="_blank" rel="noopener">
-                                        <i class="fa-solid fa-diamond-turn-right"></i> Get directions
-                                    </a>
-                        </div>
-                </div>
+                <article class="stamp-card" role="listitem" tabindex="0" data-open="entourage">
+                    <div class="stamp-top"><span>'26</span><span>4th</span></div>
+                    <i class="fa-solid fa-people-group stamp-icon"></i>
+                    <h3 class="stamp-title">Entourage</h3>
+                    <p class="stamp-desc">Meet our wedding party</p>
+                    <div class="stamp-bottom">Panganiban · Argoso</div>
+                </article>
             </div>
         </div>
 
-            <!-- modal for rsvp (third) -->
-            <div class="modal-overlay" id="modal-rsvp" aria-hidden="true">
-                <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
-                    <div class="modal-head">
-                        <h3 id="rsvpTitle">RSVP</h3><br>
-                        <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-                    </div>
+        <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Select a card"></div>
+    </section>
 
-                        <form class="rsvp-form" id="rsvpForm">
-                            <div>
-                                <label for="fullName">Full name</label>
-                                <input type="text" id="fullName" name="fullName" required autocomplete="name">
-                            </div>
+    <!-- footer -->
+    <footer class="footer-bar">
+        <span>Where love blooms, Panganiban &amp; Argoso — December 15, 2026</span>
+        <span>Designed by Shannia Ava A. Pacleb</span>
+    </footer>
 
-                        <div>
-                            <label for="attending">Will you be attending?</label>
-                                <input type="radio" name="attending" value="Joyfully accepts" required>Joyfully accepts
-                                <input type="radio" name="attending" value="Regretfully declines">Regretfully declines
-                        </div>
+    <!-- modal for dress code/timeline -->
+    <div class="modal-overlay" id="modal-dress" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="dressTitle">
+            <div class="modal-head">
+                <h3 id="dressTitle">Dress Code &amp; Timeline</h3>
+                <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
 
-                        <div>
-                            <label for="songSuggest">What song will get you on the dance floor?</label>
-                            <input type="text" id="songSuggest" name="songSuggest" required>
-                        </div>
-                        
+            <p class="venue-addr" style="margin-bottom:6px;">Garden Formal — earthy greens, wine, and cream tones. Please avoid white and bright florals.</p>
+            <div class="dress-swatches" aria-hidden="true">
+                <span class="swatch" style="background:#5a1f30"></span>
+                <span class="swatch" style="background:#532337"></span>
+                <span class="swatch" style="background:#435525"></span>
+                <span class="swatch" style="background:#4f5a32"></span>
+                <span class="swatch" style="background:#ac8e85"></span>
+            </div>
 
-                        <div>
-                            <label for="notes">Dietary restrictions or message</label>
-                            <textarea id="notes" name="notes" rows="3"></textarea>
-                        </div>
+            <!-- PLACEHOLDER IMAGE: replace assets/attire-guide.png with your own attire mood-board graphic (same filename, or update the src below) -->
+            <img class="modal-img" src="./assets/attire-guide.png" alt="Attire guide showing suggested formal wear for ladies and gentlemen">
+            <p class="modal-img-caption">A quick look at the expected formal attire — swap this for your own styled guide anytime.</p>
 
-                            <button type="submit" class="rsvp-submit">Send RSVP</button>
-                                <p class="rsvp-note">Responses are recorded to our guest list spreadsheet. Please kindly reply by October 15, 2026.</p>
-                                <p class="rsvp-status" id="rsvpStatus"></p>
-                            </form>
+            <ul class="timeline-list">
+                <li><span class="tl-time">1:00 PM</span><span class="tl-label">Guests Arrive</span></li>
+                <li><span class="tl-time">1:30 PM</span><span class="tl-label">Ceremony Begins</span></li>
+                <li><span class="tl-time">4:00 PM</span><span class="tl-label">Cocktails</span></li>
+                <li><span class="tl-time">6:00 PM</span><span class="tl-label">Dinner</span></li>
+                <li><span class="tl-time">8:30 PM</span><span class="tl-label">Dancing</span></li>
+                <li><span class="tl-time">9:00 PM</span><span class="tl-label">Send Off</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- modal for map -->
+    <div class="modal-overlay" id="modal-map" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mapTitle">
+            <div class="modal-head">
+                <h3 id="mapTitle">Getting There</h3>
+                <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="tab-row" role="tablist">
+                <button class="tab-btn active" data-pane="ceremony" role="tab" aria-selected="true">Ceremony</button>
+                <button class="tab-btn" data-pane="reception" role="tab" aria-selected="false">Reception</button>
+            </div>
+
+            <div class="map-pane active" data-pane="ceremony">
+                <!-- PLACEHOLDER IMAGE: replace assets/venue-ceremony.png with your own ceremony venue photo (same filename, or update the src below) -->
+                <img class="venue-photo" src="./assets/venue-ceremony.png" alt="Photo of the ceremony venue">
+                <div class="map-placeholder">
+                    <span><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.0315067443726!2d121.15774577594091!3d14.597280577156257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b8b089fa70bb%3A0x3a2922d867e8bd24!2sParish%20of%20the%20Immaculate%20Heart%20of%20Mary%20(Diocese%20of%20Antipolo)!5e0!3m2!1sen!2sph!4v1790072441594!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></span>
+                </div>
+                <p class="venue-name">Parish of the Immaculate Heart of Mary (Diocese of Antipolo)</p>
+                <p class="venue-addr">Daang Bakal Rd, Antipolo, 1870 Rizal</p>
+                <a class="map-link" href="https://maps.app.goo.gl/XnYdXXuiNPdWwJX39" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-diamond-turn-right"></i> Get directions
+                </a>
+            </div>
+
+            <div class="map-pane" data-pane="reception">
+                <!-- PLACEHOLDER IMAGE: replace assets/venue-reception.png with your own reception venue photo (same filename, or update the src below) -->
+                <img class="venue-photo" src="./assets/venue-reception.png" alt="Photo of the reception venue">
+                <div class="map-placeholder">
+                    <span><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.4702229044174!2d121.1643809!3d14.572261199999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c795c61bfc91%3A0x35b4322827633c80!2sTimmy%20in%20the%20Woods!5e0!3m2!1sen!2sph!4v1790072395099!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></span>
+                </div>
+                <p class="venue-name">Timmy in the Woods</p>
+                <p class="venue-addr">#3 Mount Everest Avenue, Goldenhills Subdivision, Antipolo, 1870 Rizal</p>
+                <a class="map-link" href="https://maps.app.goo.gl/Njo3QoFitmoHEnECA" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-diamond-turn-right"></i> Get directions
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal for entourage -->
+    <div class="modal-overlay" id="modal-entourage" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="entourageTitle">
+            <div class="modal-head">
+                <h3 id="entourageTitle">Wedding Entourage</h3>
+                <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="entourage-group">
+                <h4>Parents of the Groom</h4>
+                <p class="entourage-name">Full Name</p>
+                <p class="entourage-name">Full Name</p>
+            </div>
+
+            <div class="entourage-group">
+                <h4>Parents of the Bride</h4>
+                <p class="entourage-name">Full Name</p>
+                <p class="entourage-name">Full Name</p>
+            </div>
+
+            <div class="entourage-group">
+                <h4>Principal Sponsors</h4>
+                <div class="entourage-row"><span>Full Name</span><span>Full Name</span></div>
+                <div class="entourage-row"><span>Full Name</span><span>Full Name</span></div>
+                <div class="entourage-row"><span>Full Name</span><span>Full Name</span></div>
+            </div>
+
+            <div class="entourage-group">
+                <h4>Best Man &amp; Maid of Honor</h4>
+                <div class="entourage-row"><span>Full Name</span><span>Full Name</span></div>
+            </div>
+
+            <div class="entourage-group">
+                <h4>Secondary Sponsors</h4>
+                <p class="entourage-sub">Veil Sponsors</p>
+                <div class="entourage-row"><span>Full Name</span><span>Full Name</span></div>
+                <p class="entourage-sub">Candle Sponsors</p>
+                <div class="entourage-row"><span>Full Name</span><span>Full Name</span></div>
+                <p class="entourage-sub">Cord Sponsors</p>
+                <div class="entourage-row"><span>Full Name</span><span>Full Name</span></div>
+            </div>
+
+            <div class="entourage-group">
+                <h4>Coin / Ring Bearer</h4>
+                <p class="entourage-name">Full Name</p>
+                <h4>Bible Bearer</h4>
+                <p class="entourage-name">Full Name</p>
+                <h4>Flower Girl</h4>
+                <p class="entourage-name">Full Name</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal for rsvp -->
+    <div class="modal-overlay" id="modal-rsvp" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
+            <div class="modal-head">
+                <h3 id="rsvpTitle">RSVP</h3>
+                <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <p class="reserved-line">We have specifically reserved you a seat — kindly let us know if you'll be joining us.</p>
+
+            <div class="info-highlight">
+                <div class="info-highlight-item">
+                    <h4><i class="fa-solid fa-gift"></i> Gifts</h4>
+                    <p>Your presence is the greatest gift we could ask for. If you wish to bless us with a gift, a monetary contribution to help our love grow and bloom in the years ahead would be deeply appreciated.</p>
+                </div>
+                <div class="info-highlight-item">
+                    <h4><i class="fa-solid fa-calendar-check"></i> RSVP</h4>
+                    <p>Kindly confirm your attendance by October 15, 2026. We look forward to celebrating this special day with you.</p>
                 </div>
             </div>
 
-            <script src="script.js" defer></script>
+            <form class="rsvp-form" id="rsvpForm">
+                <div>
+                    <label for="fullName">Full name</label>
+                    <input type="text" id="fullName" name="fullName" required autocomplete="name">
+                </div>
+
+                <div>
+                    <label>Will you be attending?</label>
+                    <div class="attend-row" role="radiogroup" aria-label="Will you be attending?">
+                        <label class="attend-option attend-yes">
+                            <input type="radio" name="attending" value="Joyfully accepts" required>
+                            <span class="attend-tick"><i class="fa-solid fa-check"></i></span>
+                            <span class="attend-text">Joyfully Accepts</span>
+                        </label>
+                        <label class="attend-option attend-no">
+                            <input type="radio" name="attending" value="Regretfully declines">
+                            <span class="attend-tick"><i class="fa-solid fa-xmark"></i></span>
+                            <span class="attend-text">Regretfully Declines</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="songSuggest">What song will get you on the dance floor?</label>
+                    <input type="text" id="songSuggest" name="songSuggest" required>
+                </div>
+
+                <div>
+                    <label for="notes">Dietary restrictions or message</label>
+                    <textarea id="notes" name="notes" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="rsvp-submit">Send RSVP</button>
+                <p class="rsvp-note">Responses are recorded to our guest list spreadsheet. Please kindly reply by October 15, 2026.</p>
+                <p class="rsvp-status" id="rsvpStatus"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
