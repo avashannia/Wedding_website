@@ -7,23 +7,23 @@ tech stack: html, css, javascript, and google apps script
 
 features:
 
-☼ embedded google maps for church & reception.
+♡ embedded google maps for church & reception.
 
-☼ curated color palette and dress code guide.
+♡ curated color palette and dress code guide.
 
-☼ event timeline and schedule.
+♡ event timeline and schedule.
 
-☼ live rsvp form integrated directly with google sheets.
+♡ live rsvp form integrated directly with google sheets.
 
 
 
 to-do list:
 
-☼ asset and custom icons.
+♡ asset and custom icons.
 
-☼ background music player.
+♡ background music player.
 
-☼ sticky, responsive navigation bar.
+♡ sticky, responsive navigation bar.
 
-☼ mobile and tablet layout fixes.
+♡ mobile and tablet layout fixes.
 
