@@ -1,3 +1,5 @@
+https://panganibanandargoso.vercel.app/
+
 responsive wedding website designed to share event details and manage guest rsvps. gwiyomi ⸜(｡˃ ᵕ ˂ )⸝♡
 
 
