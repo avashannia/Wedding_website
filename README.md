@@ -1,29 +1,29 @@
-https://panganibanandargoso.vercel.app/
+    https://panganibanandargoso.vercel.app/
 
-responsive wedding website designed to share event details and manage guest rsvps. gwiyomi ⸜(｡˃ ᵕ ˂ )⸝♡
+    responsive wedding website designed to share event details and manage guest rsvps. gwiyomi ⸜(｡˃ ᵕ ˂ )⸝♡
+
+    tech stack: html, css, javascript, and google apps script
+    
+
+      features:
+
+        ♡ embedded google maps for church & reception.
+
+        ♡ curated color palette and dress code guide.
+
+        ♡ event timeline and schedule.
+
+        ♡ live rsvp form integrated directly with google sheets.
 
 
-tech stack: html, css, javascript, and google apps script
 
-features:
+      to-do list:
 
-♡ embedded google maps for church & reception.
+        ♡ asset and custom icons.
 
-♡ curated color palette and dress code guide.
+        ♡ background music player.
 
-♡ event timeline and schedule.
+        ♡ sticky, responsive navigation bar.
 
-♡ live rsvp form integrated directly with google sheets.
-
-
-
-to-do list:
-
-♡ asset and custom icons.
-
-♡ background music player.
-
-♡ sticky, responsive navigation bar.
-
-♡ mobile and tablet layout fixes.
+        ♡ mobile and tablet layout fixes.
 
