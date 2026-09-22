@@ -25,12 +25,10 @@
     font-family:'Instrument Serif', Georgia, serif;
     color:var(--ink);
     background-color:var(--paper);
-    background-image:
-      radial-gradient(circle at 12% 18%, rgba(255,255,255,.65) 0, transparent 40%),
-      radial-gradient(circle at 82% 8%, rgba(255,255,255,.5) 0, transparent 35%),
-      radial-gradient(ellipse at 50% 100%, rgba(0,0,0,.04) 0, transparent 60%),
-      repeating-linear-gradient(115deg, rgba(255,255,255,.35) 0 2px, transparent 2px 26px),
-      repeating-linear-gradient(25deg, rgba(0,0,0,.025) 0 1px, transparent 1px 22px);
+    /* PLACEHOLDER IMAGE: replace assets/background-texture.png with your own embossed/floral paper texture (same filename, or update the url() below). It tiles automatically. */
+    background-image:url("assets/background-texture.png");
+    background-repeat:repeat;
+    background-size:480px 480px;
     background-attachment:fixed;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
@@ -84,7 +82,7 @@
     width:min(78vw, 320px);
     filter:drop-shadow(0 22px 30px rgba(75,20,38,.22));
   }
-  .envelope-wrap svg{ width:100%; height:auto; }
+  .envelope-wrap img{ width:100%; height:auto; }
   .hero-caption{ font-size:1rem; font-style:italic; color:var(--ink); opacity:.7; max-width:320px; margin:0 auto; }
 
   /* ---------- Section 2: maroon lace panel ---------- */
@@ -98,32 +96,17 @@
   .lace-frame{
     position:relative;
     width:min(92vw, 560px);
-    aspect-ratio:4/3;
+    aspect-ratio:900/680;
     display:flex; align-items:center; justify-content:center;
     padding:clamp(20px,5vw,40px);
+    filter:drop-shadow(0 18px 40px rgba(0,0,0,.35));
   }
-  .lace-frame::before{
-    content:'';
+  .lace-frame-img{
     position:absolute; inset:0;
-    background:var(--cream);
-    border-radius:50% / 45%;
-    box-shadow:
-      0 0 0 3px var(--cream),
-      0 0 0 9px var(--wine),
-      0 0 0 12px var(--cream),
-      0 18px 40px rgba(0,0,0,.35);
+    width:100%; height:100%;
+    object-fit:contain;
+    z-index:1;
   }
-  .lace-frame::after{
-    content:'';
-    position:absolute; inset:16px;
-    border:1px dashed rgba(75,20,38,.35);
-    border-radius:50% / 45%;
-  }
-  .lace-corner{
-    position:absolute; color:var(--wine); opacity:.45; font-size:1.1rem;
-  }
-  .lace-corner.tl{ top:6%; left:10%; } .lace-corner.tr{ top:6%; right:10%; }
-  .lace-corner.bl{ bottom:6%; left:10%; } .lace-corner.br{ bottom:6%; right:10%; }
   .lace-content{ position:relative; z-index:2; }
   .names{
     font-size:clamp(1.7rem, 5.4vw, 2.7rem);

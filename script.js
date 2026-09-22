@@ -75,9 +75,10 @@
   document.getElementById('nextBtn').addEventListener('click', () => track.scrollBy({ left: 280, behavior: 'smooth' }));
 
   // ---------- RSVP submit ----------
-  // Replace GOOGLE_APPS_SCRIPT_URL with your deployed Google Apps Script Web App URL
-  // (Extensions > Apps Script in your Google Sheet, deployed as a Web App with doPost()).
-  const GOOGLE_APPS_SCRIPT_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+  // Replace GOOGLE_APPS_SCRIPT_URL with your deployed Google Apps Script Web App URL.
+  // The matching backend code to paste into Extensions > Apps Script is in
+  // google-apps-script/Code.gs — see that file for full setup steps.
+  const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwWYm7cx7sNSLX8Zm5xHPFeEk5B9BuIFyw9BIqDYHv7tSsKPnyu0fMlSalanH7t2k6b7g/exec';
 
   document.getElementById('rsvpForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -95,7 +96,7 @@
     status.classList.add('show');
 
     try {
-      if (GOOGLE_APPS_SCRIPT_URL.startsWith('PASTE_')) {
+      if (GOOGLE_APPS_SCRIPT_URL.startsWith('https://script.google.com/macros/s/AKfycbwWYm7cx7sNSLX8Zm5xHPFeEk5B9BuIFyw9BIqDYHv7tSsKPnyu0fMlSalanH7t2k6b7g/exec')) {
         // No endpoint configured yet — just confirm locally so the flow is testable.
         await new Promise(r => setTimeout(r, 500));
       } else {
