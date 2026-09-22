@@ -41,7 +41,7 @@ body{
   font-family:'Instrument Serif', Georgia, serif;
   color:var(--ink);
   background-color:var(--paper);
-  background-image:url("./embossed-background.png");
+  background-image:url("./assets/embossed-background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment:fixed;
