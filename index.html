@@ -1,167 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Panganiban &amp; Argoso — 12.15.26</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panganiban &amp; Argoso — 12.15.26</title>
+    <link rel="icon" href="./icon header.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+        <!-- hero area -->
+        <section id="home" class="hero">
+            <div class="envelope-wrap">
+                <img src="./hero area-envelope.png" alt="Wedding invitation envelope" width="1000" height="1000">
+            </div>
 
-<!-- ================= SECTION 1: HERO ================= -->
-<section id="home" class="hero">
-  <span class="hero-mark">The Wedding of</span>
+                <!-- nav bar -->
+                <nav class="pill-nav" aria-label="Primary">
+                    <button type="button" data-nav="home" class="active" aria-label="Home"><i class="fa-solid fa-house"></i></button>
+                    <button type="button" data-nav="map" aria-label="Open map"><i class="fa-solid fa-map-location-dot"></i></button>
+                    <button type="button" data-nav="rsvp" aria-label="Open RSVP"><i class="fa-solid fa-envelope-open-text"></i></button>
+                </nav>
 
-  <div class="envelope-wrap">
-    <!-- PLACEHOLDER IMAGE: replace assets/envelope-placeholder.png with your own envelope photo/graphic (same filename, or update the src below) -->
-    <img src="./hero area-envelope.png" alt="Wedding invitation envelope" width="640" height="600">
-  </div>
+                <nav class="pill-nav nav-fixed" id="fixedNav" aria-label="Quick navigation">
+                    <button type="button" data-nav="home" aria-label="Home"><i class="fa-solid fa-house"></i></button>
+                    <button type="button" data-nav="map" aria-label="Open map"><i class="fa-solid fa-map-location-dot"></i></button>
+                    <button type="button" data-nav="rsvp" aria-label="Open RSVP"><i class="fa-solid fa-envelope-open-text"></i></button>
+                </nav>
+        </section>
 
-  <nav class="pill-nav" aria-label="Primary">
-    <button type="button" data-nav="home" class="active" aria-label="Home"><i class="fa-solid fa-house"></i></button>
-    <button type="button" data-nav="map" aria-label="Open map"><i class="fa-solid fa-map-location-dot"></i></button>
-    <button type="button" data-nav="rsvp" aria-label="Open RSVP"><i class="fa-solid fa-envelope-open-text"></i></button>
-  </nav>
-</section>
+        <!-- second area -->
+        <section class="panel-maroon" aria-label="Couple names and date">
+            <div class="lace-frame">
+                <img class="lace-frame-img" src="./title hero area.png" alt="" aria-hidden="true" width="1000" height="800">
+                    <!--<div class="lace-content">
+                        <p class="names">Panganiban &amp; Argoso</p>
+                        <p class="subtitle">Panganiban &amp; Argoso Nuptials</p>
+                        <p class="date-line">12 . 15 . 26</p>
+                    </div>-->
+            </div>
+        </section>
 
-<!-- fixed nav that appears on scroll -->
-<nav class="pill-nav nav-fixed" id="fixedNav" aria-label="Quick navigation">
-  <button type="button" data-nav="home" aria-label="Home"><i class="fa-solid fa-house"></i></button>
-  <button type="button" data-nav="map" aria-label="Open map"><i class="fa-solid fa-map-location-dot"></i></button>
-  <button type="button" data-nav="rsvp" aria-label="Open RSVP"><i class="fa-solid fa-envelope-open-text"></i></button>
-</nav>
+        <!-- third (title for stamps)-->
+        <section class="stamps-section" aria-label="Wedding details">
+            <div class="stamps-heading">
+                <h2>Everything You Need to Know</h2>
+                <p>Tap a stamp for the details</p>
+            </div>
+                </div>
 
-<!-- ================= SECTION 2: NAMES ================= -->
-<section class="panel-maroon" aria-label="Couple names and date">
-  <div class="lace-frame">
-    <!-- PLACEHOLDER IMAGE: replace assets/lace-frame.png with your own lace/doily frame graphic (same filename, or update the src below) -->
-    <img class="lace-frame-img" src="assets/lace-frame.png" alt="" aria-hidden="true" width="900" height="680">
-    <div class="lace-content">
-      <p class="names">Panganiban &amp; Argoso</p>
-      <p class="subtitle">Panganiban &amp; Argoso Nuptials</p>
-      <p class="date-line">12 . 15 . 26</p>
-    </div>
-  </div>
-</section>
+            <div class="stamp-track-wrap">
+                <button class="track-arrow prev" id="prevBtn" aria-label="Previous card"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="stamp-track" id="stampTrack" role="list">
+                    <article class="stamp-card" role="listitem" tabindex="0" data-open="dress">
+                        <div class="stamp-top"><span>'26</span><span>1st</span></div>
+                        <i class="fa-solid fa-shirt stamp-icon"></i>
+                        <h3 class="stamp-title">Dress Code &amp; Timeline</h3>
+                        <p class="stamp-desc">What to wear and how the day unfolds</p>
+                        <div class="stamp-bottom">Panganiban · Argoso</div>
+                    </article>
 
-<!-- ================= SECTION 3: STAMP SLIDER ================= -->
-<section class="stamps-section" aria-label="Wedding details">
-  <div class="stamps-heading">
-    <h2>Everything You Need to Know</h2>
-    <p>Tap a stamp for the details</p>
-  </div>
+                    <article class="stamp-card is-center" role="listitem" tabindex="0" data-open="map">
+                        <div class="stamp-top"><span>'26</span><span>2nd</span></div>
+                        <i class="fa-solid fa-map-location-dot stamp-icon"></i>
+                        <h3 class="stamp-title">Ceremony &amp; Reception</h3>
+                        <p class="stamp-desc">Venue details and directions</p>
+                        <div class="stamp-bottom">Panganiban · Argoso</div>
+                    </article>
 
-  <div class="stamp-track-wrap">
-    <button class="track-arrow prev" id="prevBtn" aria-label="Previous card"><i class="fa-solid fa-chevron-left"></i></button>
-    <div class="stamp-track" id="stampTrack" role="list">
-      <article class="stamp-card" role="listitem" tabindex="0" data-open="dress">
-        <div class="stamp-top"><span>'26</span><span>1st</span></div>
-        <i class="fa-solid fa-shirt stamp-icon"></i>
-        <h3 class="stamp-title">Dress Code &amp; Timeline</h3>
-        <p class="stamp-desc">What to wear and how the day unfolds</p>
-        <div class="stamp-bottom">Panganiban · Argoso</div>
-      </article>
+                    <article class="stamp-card" role="listitem" tabindex="0" data-open="rsvp">
+                        <div class="stamp-top"><span>'26</span><span>3rd</span></div>
+                        <i class="fa-solid fa-envelope-open-text stamp-icon"></i>
+                        <h3 class="stamp-title">RSVP</h3>
+                        <p class="stamp-desc">Let us know you're coming</p>
+                        <div class="stamp-bottom">Panganiban · Argoso</div>
+                    </article>
+                </div>
 
-      <article class="stamp-card is-center" role="listitem" tabindex="0" data-open="map">
-        <div class="stamp-top"><span>'26</span><span>2nd</span></div>
-        <i class="fa-solid fa-map-location-dot stamp-icon"></i>
-        <h3 class="stamp-title">Ceremony &amp; Reception</h3>
-        <p class="stamp-desc">Venue details and directions</p>
-        <div class="stamp-bottom">Panganiban · Argoso</div>
-      </article>
+                <button class="track-arrow next" id="nextBtn" aria-label="Next card"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
 
-      <article class="stamp-card" role="listitem" tabindex="0" data-open="rsvp">
-        <div class="stamp-top"><span>'26</span><span>3rd</span></div>
-        <i class="fa-solid fa-envelope-open-text stamp-icon"></i>
-        <h3 class="stamp-title">RSVP</h3>
-        <p class="stamp-desc">Let us know you're coming</p>
-        <div class="stamp-bottom">Panganiban · Argoso</div>
-      </article>
-    </div>
-    <button class="track-arrow next" id="nextBtn" aria-label="Next card"><i class="fa-solid fa-chevron-right"></i></button>
-  </div>
-</section>
+        <!-- footer -->
+        <footer class="footer-bar">
+            <span>With love, Panganiban &amp; Argoso — December 15, 2026</span>
+        </footer>
 
-<footer class="footer-bar">
-  <span>With love, Panganiban &amp; Argoso — December 15, 2026</span>
-</footer>
+            <!-- modal (third) -->
+            <div class="modal-overlay" id="modal-dress" aria-hidden="true">
+                <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="dressTitle">
+                    <div class="modal-head">
+                        <h3 id="dressTitle">Dress Code &amp; Timeline</h3>
+                        <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
 
-<!-- ================= MODAL: DRESS CODE & TIMELINE ================= -->
-<div class="modal-overlay" id="modal-dress" aria-hidden="true">
-  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="dressTitle">
-    <div class="modal-head">
-      <h3 id="dressTitle">Dress Code &amp; Timeline</h3>
-      <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-    </div>
+                            <p class="venue-addr" style="margin-bottom:6px;">Garden Formal — earthy greens, wine, and cream tones. Please avoid white and bright florals.</p>
+                                <div class="dress-swatches" aria-hidden="true">
+                                    <span class="swatch" style="background:#445717"></span>
+                                    <span class="swatch" style="background:#4b1426"></span>
+                                    <span class="swatch" style="background:#c9bd98"></span>
+                                    <span class="swatch" style="background:#8a8f6b"></span>
+                                    <span class="swatch" style="background:#f6f1e6"></span>
+                                </div>
 
-    <p class="venue-addr" style="margin-bottom:6px;">Garden Formal — earthy greens, wine, and cream tones. Please avoid white and bright florals.</p>
-    <div class="dress-swatches" aria-hidden="true">
-      <span class="swatch" style="background:#445717"></span>
-      <span class="swatch" style="background:#4b1426"></span>
-      <span class="swatch" style="background:#c9bd98"></span>
-      <span class="swatch" style="background:#8a8f6b"></span>
-      <span class="swatch" style="background:#f6f1e6"></span>
-    </div>
+                                    <ul class="timeline-list">
+                                    <li><span class="tl-time">2:00 PM</span><span class="tl-label">Guests arrive</span></li>
+                                    <li><span class="tl-time">3:00 PM</span><span class="tl-label">Ceremony begins</span></li>
+                                    <li><span class="tl-time">4:00 PM</span><span class="tl-label">Cocktail hour</span></li>
+                                    <li><span class="tl-time">5:30 PM</span><span class="tl-label">Reception &amp; dinner</span></li>
+                                    <li><span class="tl-time">8:00 PM</span><span class="tl-label">First dance &amp; toasts</span></li>
+                                    <li><span class="tl-time">10:00 PM</span><span class="tl-label">Send-off</span></li>
+                                    </ul>
+                                </div>
+                                </div>
 
-    <ul class="timeline-list">
-      <li><span class="tl-time">2:00 PM</span><span class="tl-label">Guests arrive</span></li>
-      <li><span class="tl-time">3:00 PM</span><span class="tl-label">Ceremony begins</span></li>
-      <li><span class="tl-time">4:00 PM</span><span class="tl-label">Cocktail hour</span></li>
-      <li><span class="tl-time">5:30 PM</span><span class="tl-label">Reception &amp; dinner</span></li>
-      <li><span class="tl-time">8:00 PM</span><span class="tl-label">First dance &amp; toasts</span></li>
-      <li><span class="tl-time">10:00 PM</span><span class="tl-label">Send-off</span></li>
-    </ul>
-  </div>
-</div>
 
-<!-- ================= MODAL: MAP ================= -->
-<div class="modal-overlay" id="modal-map" aria-hidden="true">
-  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mapTitle">
-    <div class="modal-head">
-      <h3 id="mapTitle">Getting There</h3>
-      <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-    </div>
+            <div class="modal-overlay" id="modal-map" aria-hidden="true">
+                <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mapTitle">
+                    <div class="modal-head">
+                        <h3 id="mapTitle">Getting There</h3>
+                        <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
 
-    <div class="tab-row" role="tablist">
-      <button class="tab-btn active" data-pane="ceremony" role="tab" aria-selected="true">Ceremony</button>
-      <button class="tab-btn" data-pane="reception" role="tab" aria-selected="false">Reception</button>
-    </div>
+                    <div class="tab-row" role="tablist">
+                        <button class="tab-btn active" data-pane="ceremony" role="tab" aria-selected="true">Ceremony</button>
+                        <button class="tab-btn" data-pane="reception" role="tab" aria-selected="false">Reception</button>
+                    </div>
 
-    <div class="map-pane active" data-pane="ceremony">
-      <div class="map-placeholder"><!-- PLACEHOLDER: swap for an embedded Google Map iframe or your own map image -->
-        <span>Map preview — replace with embedded map for the ceremony venue</span>
-      </div>
-      <p class="venue-name">St. Clare Garden Chapel</p>
-      <p class="venue-addr">123 Fernwood Lane, Marikina City, Philippines</p>
-      <a class="map-link" href="https://maps.google.com" target="_blank" rel="noopener">
-        <i class="fa-solid fa-diamond-turn-right"></i> Get directions
-      </a>
-    </div>
+                        <div class="map-pane active" data-pane="ceremony">
+                            <div class="map-placeholder"><!-- PLACEHOLDER: swap for an embedded Google Map iframe or your own map image -->
+                                <span>Map preview — replace with embedded map for the ceremony venue</span>
+                            </div>
+                                <p class="venue-name">St. Clare Garden Chapel</p>
+                                <p class="venue-addr">123 Fernwood Lane, Marikina City, Philippines</p>
+                                    <a class="map-link" href="https://maps.google.com" target="_blank" rel="noopener">
+                                        <i class="fa-solid fa-diamond-turn-right"></i> Get directions
+                                </a>
+                        </div>
 
-    <div class="map-pane" data-pane="reception">
-      <div class="map-placeholder">
-        <span>Map preview — replace with embedded map for the reception venue</span>
-      </div>
-      <p class="venue-name">The Olive &amp; Vine Pavilion</p>
-      <p class="venue-addr">45 Rosewood Grove, Marikina City, Philippines</p>
-      <a class="map-link" href="https://maps.google.com" target="_blank" rel="noopener">
-        <i class="fa-solid fa-diamond-turn-right"></i> Get directions
-      </a>
-    </div>
-  </div>
-</div>
+                        <div class="map-pane" data-pane="reception">
+                            <div class="map-placeholder">
+                                <span>Map preview — replace with embedded map for the reception venue</span>
+                            </div>
+                                <p class="venue-name">The Olive &amp; Vine Pavilion</p>
+                                <p class="venue-addr">45 Rosewood Grove, Marikina City, Philippines</p>
+                                    <a class="map-link" href="https://maps.google.com" target="_blank" rel="noopener">
+                                        <i class="fa-solid fa-diamond-turn-right"></i> Get directions
+                                    </a>
+                        </div>
+                </div>
+            </div>
+        </div>
 
-<!-- ================= MODAL: RSVP ================= -->
-<div class="modal-overlay" id="modal-rsvp" aria-hidden="true">
-  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
-    <div class="modal-head">
-      <h3 id="rsvpTitle">RSVP</h3>
-      <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-    </div>
+
+            <div class="modal-overlay" id="modal-rsvp" aria-hidden="true">
+            <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
+                <div class="modal-head">
+                <h3 id="rsvpTitle">RSVP</h3>
+                <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                </div>
 
     <form class="rsvp-form" id="rsvpForm">
       <div>
