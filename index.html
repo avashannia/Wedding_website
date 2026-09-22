@@ -101,9 +101,9 @@
 
                             <p class="venue-addr" style="margin-bottom:6px;">Garden Formal — earthy greens, wine, and cream tones. Please avoid white and bright florals.</p>
                                 <div class="dress-swatches" aria-hidden="true">
-                                    <span class="swatch" style="background:#435525"></span>
                                     <span class="swatch" style="background:#5a1f30"></span>
                                     <span class="swatch" style="background:#532337"></span>
+                                    <span class="swatch" style="background:#435525"></span>
                                     <span class="swatch" style="background:#4f5a32"></span>
                                     <span class="swatch" style="background:#ac8e85"></span>
                                 </div>
@@ -173,18 +173,16 @@
                         <div>
                             <label for="attending">Will you be attending?</label>
                                 <select id="attending" name="attending" required>
-                                    <option value="">Select one</option>
-                                    <option value="Joyfully accepts">Joyfully accepts</option>
-                                    <option value="Regretfully declines">Regretfully declines</option>
+                                    <input type="radio" name="attending" value="Joyfully accepts" required>Joyfully accepts
+                                    <input type="radio" name="attending" value="Regretfully declines">Regretfully declines
                                 </select>
                         </div>
 
-                        <!-- 
                         <div>
-                            <label for="guestCount">Number of guests (including you)</label>
-                            <input type="number" id="guestCount" name="guestCount" min="1" max="1" value="1">
+                            <label for="songSuggest">What song will get you on the dance floor?</label>
+                            <input type="text" id="songSuggest" name="songSuggest" required>
                         </div>
-                        -->
+                        
 
                         <div>
                             <label for="notes">Dietary restrictions or message</label>
