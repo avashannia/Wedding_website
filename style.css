@@ -556,6 +556,7 @@ form.rsvp-form{
   font-family:inherit; 
   font-size:1rem; 
   color:var(--ink);
+  resize: none;
 }
 
 .rsvp-form input:focus-visible, 
