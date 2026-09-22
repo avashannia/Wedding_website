@@ -543,6 +543,7 @@ form.rsvp-form{
   font-family:Georgia,serif; 
   margin-bottom:4px; 
   display:block; 
+  resize: none;
 }
 
 .rsvp-form input, 
@@ -564,6 +565,7 @@ form.rsvp-form{
 .rsvp-form textarea:focus-visible{
     outline:2px solid var(--olive); 
     outline-offset:1px;
+    resize: none;
 }
 
 .rsvp-submit{
