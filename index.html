@@ -90,7 +90,7 @@
             <span>With love, Panganiban &amp; Argoso — December 15, 2026</span>
         </footer>
 
-            <!-- modal (third) -->
+            <!-- modal for dress code/timeline (third) -->
             <div class="modal-overlay" id="modal-dress" aria-hidden="true">
                 <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="dressTitle">
                     <div class="modal-head">
@@ -118,7 +118,7 @@
                                 </div>
                                 </div>
 
-
+            <!-- modal for map (third) -->
             <div class="modal-overlay" id="modal-map" aria-hidden="true">
                 <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mapTitle">
                     <div class="modal-head">
@@ -132,23 +132,23 @@
                     </div>
 
                         <div class="map-pane active" data-pane="ceremony">
-                            <div class="map-placeholder"><!-- PLACEHOLDER: swap for an embedded Google Map iframe or your own map image -->
-                                <span>Map preview — replace with embedded map for the ceremony venue</span>
+                            <div class="map-placeholder">
+                                <span><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.0315067443726!2d121.15774577594091!3d14.597280577156257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b8b089fa70bb%3A0x3a2922d867e8bd24!2sParish%20of%20the%20Immaculate%20Heart%20of%20Mary%20(Diocese%20of%20Antipolo)!5e0!3m2!1sen!2sph!4v1790072441594!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></span>
                             </div>
-                                <p class="venue-name">St. Clare Garden Chapel</p>
-                                <p class="venue-addr">123 Fernwood Lane, Marikina City, Philippines</p>
-                                    <a class="map-link" href="https://maps.google.com" target="_blank" rel="noopener">
+                                <p class="venue-name">Parish of the Immaculate Heart of Mary (Diocese of Antipolo)</p>
+                                <p class="venue-addr">Daang Bakal Rd, Antipolo, 1870 Rizal</p>
+                                    <a class="map-link" href="https://maps.app.goo.gl/XnYdXXuiNPdWwJX39" target="_blank" rel="noopener">
                                         <i class="fa-solid fa-diamond-turn-right"></i> Get directions
                                 </a>
                         </div>
 
                         <div class="map-pane" data-pane="reception">
                             <div class="map-placeholder">
-                                <span>Map preview — replace with embedded map for the reception venue</span>
+                                <span><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.4702229044174!2d121.1643809!3d14.572261199999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c795c61bfc91%3A0x35b4322827633c80!2sTimmy%20in%20the%20Woods!5e0!3m2!1sen!2sph!4v1790072395099!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></span>
                             </div>
-                                <p class="venue-name">The Olive &amp; Vine Pavilion</p>
-                                <p class="venue-addr">45 Rosewood Grove, Marikina City, Philippines</p>
-                                    <a class="map-link" href="https://maps.google.com" target="_blank" rel="noopener">
+                                <p class="venue-name">Timmy in the Woods</p>
+                                <p class="venue-addr">#3 Mount Everest Avenue, Goldenhills Subdivision, Antipolo, 1870 Rizal</p>
+                                    <a class="map-link" href="https://maps.app.goo.gl/Njo3QoFitmoHEnECA" target="_blank" rel="noopener">
                                         <i class="fa-solid fa-diamond-turn-right"></i> Get directions
                                     </a>
                         </div>
@@ -156,42 +156,46 @@
             </div>
         </div>
 
-
+            <!-- modal for rsvp (third) -->
             <div class="modal-overlay" id="modal-rsvp" aria-hidden="true">
-            <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
-                <div class="modal-head">
-                <h3 id="rsvpTitle">RSVP</h3>
-                <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
+                    <div class="modal-head">
+                        <h3 id="rsvpTitle">RSVP</h3>
+                        <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                        <form class="rsvp-form" id="rsvpForm">
+                            <div>
+                                <label for="fullName">Full name</label>
+                                <input type="text" id="fullName" name="fullName" required autocomplete="name">
+                            </div>
+
+                        <div>
+                            <label for="attending">Will you be attending?</label>
+                                <select id="attending" name="attending" required>
+                                    <option value="">Select one</option>
+                                    <option value="Joyfully accepts">Joyfully accepts</option>
+                                    <option value="Regretfully declines">Regretfully declines</option>
+                                </select>
+                        </div>
+
+                        <div>
+                            <label for="guestCount">Number of guests (including you)</label>
+                            <input type="number" id="guestCount" name="guestCount" min="1" max="1" value="1">
+                        </div>
+
+                        <div>
+                            <label for="notes">Dietary restrictions or message</label>
+                            <textarea id="notes" name="notes" rows="3"></textarea>
+                        </div>
+
+                            <button type="submit" class="rsvp-submit">Send RSVP</button>
+                                <p class="rsvp-note">Responses are recorded to our guest list spreadsheet. Please kindly reply by October 15, 2026.</p>
+                                <p class="rsvp-status" id="rsvpStatus"></p>
+                            </form>
                 </div>
+            </div>
 
-    <form class="rsvp-form" id="rsvpForm">
-      <div>
-        <label for="fullName">Full name</label>
-        <input type="text" id="fullName" name="fullName" required autocomplete="name">
-      </div>
-      <div>
-        <label for="attending">Will you be attending?</label>
-        <select id="attending" name="attending" required>
-          <option value="">Select one</option>
-          <option value="Joyfully accepts">Joyfully accepts</option>
-          <option value="Regretfully declines">Regretfully declines</option>
-        </select>
-      </div>
-      <div>
-        <label for="guestCount">Number of guests (including you)</label>
-        <input type="number" id="guestCount" name="guestCount" min="1" max="1" value="1">
-      </div>
-      <div>
-        <label for="notes">Dietary restrictions or message</label>
-        <textarea id="notes" name="notes" rows="3"></textarea>
-      </div>
-      <button type="submit" class="rsvp-submit">Send RSVP</button>
-      <p class="rsvp-note">Responses are recorded to our guest list spreadsheet. Please kindly reply by October 15, 2026.</p>
-      <p class="rsvp-status" id="rsvpStatus"></p>
-    </form>
-  </div>
-</div>
-
-<script src="script.js" defer></script>
+            <script src="script.js" defer></script>
 </body>
 </html>

@@ -1,160 +1,299 @@
 :root{
-    --olive:#445717;
-    --olive-deep:#374614;
-    --wine:#4b1426;
-    --wine-deep:#37101c;
-    --paper:#f6f1e6;
-    --paper-line:#e7ddc6;
-    --ink:#3a2e22;
-    --cream:#fbf7ee;
-    box-sizing:border-box;
-    padding-top:env(safe-area-inset-top,0px);
-    padding-bottom:env(safe-area-inset-bottom,0px);
-  }
-  *,*::before,*::after{box-sizing:inherit}
-  html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px);}
+  --olive:#445717;
+  --olive-deep:#374614;
+  --wine:#4b1426;
+  --wine-deep:#37101c;
+  --paper:#f6f1e6;
+  --paper-line:#e7ddc6;
+  --ink:#3a2e22;
+  --cream:#fbf7ee;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
 
-  @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]){ --paper:#f6f1e6; --ink:#3a2e22; }
-  }
-  :root[data-theme="dark"]{ --paper:#f6f1e6; --ink:#3a2e22; }
+*, *::before, *::after {
+  box-sizing:inherit;
+}
 
-  html,body{height:100%;}
-  body{
-    margin:0;
-    font-family:'Instrument Serif', Georgia, serif;
-    color:var(--ink);
-    background-color:var(--paper);
-    /* PLACEHOLDER IMAGE: replace assets/background-texture.png with your own embossed/floral paper texture (same filename, or update the url() below). It tiles automatically. */
-    background-image:url("assets/background-texture.png");
-    background-repeat:repeat;
-    background-size:480px 480px;
-    background-attachment:fixed;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
+html{
+  scroll-behavior:smooth; 
+  scroll-padding-top:env(safe-area-inset-top,0px);
+}
 
-  img{max-width:100%; display:block;}
-  button{font-family:inherit;}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#f6f1e6; --ink:#3a2e22;
+  }
+}
+  
+:root[data-theme="dark"]{ 
+  --paper:#f6f1e6; 
+  --ink:#3a2e22; 
+}
 
-  .eyebrow-label{ font-family:Georgia,serif; font-size:.68rem; letter-spacing:.14em; color:var(--wine); opacity:.75; }
+html, body{
+  height:100%;
+}
 
-  /* ---------- floating pill nav ---------- */
-  .pill-nav{
-    display:flex; align-items:center; gap:clamp(10px,4vw,22px);
-    background:var(--cream);
-    border-radius:999px;
-    padding:10px clamp(16px,5vw,26px);
-    box-shadow:0 6px 22px rgba(75,20,38,.18), 0 1px 0 rgba(255,255,255,.6) inset;
-    width:fit-content;
-  }
-  .pill-nav button{
-    background:none; border:none; cursor:pointer;
-    width:34px; height:34px; border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    color:var(--wine); font-size:1.05rem;
-    transition:background .2s ease, color .2s ease, transform .2s ease;
-  }
-  .pill-nav button:hover{ background:rgba(75,20,38,.08); transform:translateY(-1px); }
-  .pill-nav button:focus-visible{ outline:2px solid var(--olive); outline-offset:2px; }
-  .pill-nav button.active{ background:var(--wine); color:var(--cream); }
+body{
+  margin:0;
+  font-family:'Instrument Serif', Georgia, serif;
+  color:var(--ink);
+  background-color:var(--paper);
+  background-image:url("./embossed-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
 
-  .nav-fixed{
-    position:fixed; left:50%; bottom:calc(18px + env(safe-area-inset-bottom,0px));
-    transform:translateX(-50%);
-    z-index:60;
-    opacity:0; pointer-events:none;
-    transition:opacity .35s ease, bottom .35s ease;
-  }
-  .nav-fixed.visible{ opacity:1; pointer-events:auto; }
+img{
+max-width:100%; 
+display:block;
+}
 
-  /* ---------- Section 1: hero ---------- */
-  .hero{
-    min-height:100svh;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:clamp(24px,6vw,44px);
-    padding:calc(48px + env(safe-area-inset-top,0px)) 20px 40px;
-    text-align:center;
-    position:relative;
-  }
-  .hero-mark{ font-size:.72rem; letter-spacing:.32em; color:var(--wine); opacity:.6; text-transform:uppercase; font-family:Georgia,serif;}
-  .envelope-wrap{
-    width:min(78vw, 320px);
-    filter:drop-shadow(0 22px 30px rgba(75,20,38,.22));
-  }
-  .envelope-wrap img{ width:100%; height:auto; }
-  .hero-caption{ font-size:1rem; font-style:italic; color:var(--ink); opacity:.7; max-width:320px; margin:0 auto; }
+button{
+  font-family:inherit;
+}
 
-  /* ---------- Section 2: maroon lace panel ---------- */
-  .panel-maroon{
-    background:
-      radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.05), transparent 60%),
-      var(--wine);
-    padding:clamp(56px,10vw,96px) 20px;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .lace-frame{
-    position:relative;
-    width:min(92vw, 560px);
-    aspect-ratio:900/680;
-    display:flex; align-items:center; justify-content:center;
-    padding:clamp(20px,5vw,40px);
-    filter:drop-shadow(0 18px 40px rgba(0,0,0,.35));
-  }
-  .lace-frame-img{
-    position:absolute; inset:0;
-    width:100%; height:100%;
-    object-fit:contain;
-    z-index:1;
-  }
-  .lace-content{ position:relative; z-index:2; }
-  .names{
-    font-size:clamp(1.7rem, 5.4vw, 2.7rem);
-    line-height:1.05; color:var(--wine); margin:0 0 8px;
-  }
-  .subtitle{
-    font-family:Georgia,serif; font-size:.62rem; letter-spacing:.2em;
-    text-transform:uppercase; color:var(--wine); opacity:.65; margin:0 0 10px;
-  }
-  .date-line{ font-size:clamp(1.1rem,3.2vw,1.5rem); color:var(--ink); opacity:.85; margin:0;}
+.eyebrow-label{ 
+  font-family:Georgia,serif; 
+  font-size:.68rem; 
+  letter-spacing:.14em; 
+  color:var(--wine); 
+  opacity:.75; 
+}
 
-  /* ---------- Section 3: stamp slider ---------- */
-  .stamps-section{ padding:clamp(56px,9vw,90px) 16px clamp(40px,8vw,64px); position:relative;}
-  .stamps-heading{ text-align:center; margin:0 0 clamp(28px,6vw,44px); }
-  .stamps-heading h2{ font-size:clamp(1.5rem,4vw,2.1rem); color:var(--wine); margin:0 0 6px; }
-  .stamps-heading p{ font-family:Georgia,serif; font-size:.85rem; color:var(--ink); opacity:.65; margin:0;}
+.pill-nav{
+  display:flex; align-items:center; gap:clamp(10px,4vw,22px);
+  background:var(--cream);
+  border-radius:999px;
+  padding:10px clamp(16px,5vw,26px);
+  box-shadow:0 6px 22px rgba(75,20,38,.18), 0 1px 0 rgba(255,255,255,.6) inset;
+  width:fit-content;
+}
 
-  .stamp-track-wrap{ position:relative; max-width:980px; margin:0 auto; }
+.pill-nav button{
+  background:none; border:none; cursor:pointer;
+  width:34px; height:34px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--wine); font-size:1.05rem;
+  transition:background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.pill-nav button:hover{
+    background:rgba(75,20,38,.08); 
+    transform:translateY(-1px); 
+}
+
+.pill-nav button:focus-visible{ 
+    outline:2px solid var(--olive); 
+    outline-offset:2px; 
+}
+
+.pill-nav button.active{ 
+    background:var(--wine); 
+    color:var(--cream); 
+}
+
+.nav-fixed{
+  position:fixed; left:50%; bottom:calc(18px + env(safe-area-inset-bottom,0px));
+  transform:translateX(-50%);
+  z-index:60;
+  opacity:0; pointer-events:none;
+  transition:opacity .35s ease, bottom .35s ease;
+}
+  
+.nav-fixed.visible{ 
+  opacity:1; 
+  pointer-events:auto; 
+}
+
+.hero{
+  min-height:100svh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:clamp(24px,6vw,44px);
+  padding:calc(48px + env(safe-area-inset-top,0px)) 20px 40px;
+  text-align:center;
+  position:relative;
+}
+
+.hero-mark{
+  font-size:.72rem; 
+  letter-spacing:.32em; 
+  color:var(--wine); 
+  opacity:.6; 
+  text-transform:uppercase; 
+  font-family:Georgia,serif;
+}
+
+.envelope-wrap{
+  width:min(78vw, 320px);
+  filter:drop-shadow(0 22px 30px rgba(75,20,38,.22));
+}
+
+.envelope-wrap img{ 
+  width:100%; 
+  height:auto; 
+}
+
+.hero-caption{ 
+  font-size:1rem;
+  font-style:italic; 
+  color:var(--ink); 
+  opacity:.7; 
+  max-width:320px; 
+  margin:0 auto; 
+}
+
+.panel-maroon{
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.05), transparent 60%),
+    var(--wine);
+  padding:clamp(56px,10vw,96px) 20px;
+  display:flex; align-items:center; justify-content:center;
+}
+
+.lace-frame{
+  position:relative;
+  width:min(92vw, 560px);
+  aspect-ratio:900/680;
+  display:flex; align-items:center; justify-content:center;
+  padding:clamp(20px,5vw,40px);
+  filter:drop-shadow(0 18px 40px rgba(0,0,0,.35));
+}
+
+.lace-frame-img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:contain;
+  z-index:1;
+}
+
+.lace-content{ 
+  position:relative; 
+  z-index:2; 
+}
+
+.names{
+  font-size:clamp(1.7rem, 5.4vw, 2.7rem);
+  line-height:1.05; 
+  color:var(--wine); 
+  margin:0 0 8px;
+}
+
+.subtitle{
+  font-family:Georgia,serif; 
+  font-size:.62rem; 
+  letter-spacing:.2em;
+  text-transform:uppercase; 
+  color:var(--wine); 
+  opacity:.65; 
+  margin:0 0 10px;
+}
+  
+.date-line{ 
+  font-size:clamp(1.1rem,3.2vw,1.5rem); 
+  color:var(--ink); 
+  opacity:.85; 
+  margin:0;
+}
+
+.stamps-section{ 
+  padding:
+    clamp(56px,9vw,90px) 16px 
+    clamp(40px,8vw,64px); 
+  position:relative;
+}
+
+.stamps-heading{ 
+  text-align:center; 
+  margin:0 0 clamp(28px,6vw,44px); 
+}
+
+.stamps-heading h2{ 
+  font-size:clamp(1.5rem,4vw,2.1rem); 
+  color:var(--wine); 
+  margin:0 0 6px; 
+}
+
+.stamps-heading p{ 
+  font-family:Georgia,serif; 
+  font-size:.85rem; 
+  color:var(--ink); 
+  opacity:.65; 
+  margin:0;
+}
+
+.stamp-track-wrap{
+  position:relative; 
+  max-width:980px; 
+  margin:0 auto; 
+}
+
   .stamp-track{
-    display:flex; gap:18px;
-    overflow-x:auto; scroll-snap-type:x mandatory;
-    padding:14px 8px 22px;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-  }
-  .stamp-track::-webkit-scrollbar{ display:none; }
-  .stamp-card{
-    scroll-snap-align:center;
-    flex:0 0 auto;
-    width:min(70vw, 250px);
-    background:var(--cream);
-    border:9px dotted var(--paper);
-    outline:1px solid rgba(75,20,38,.15);
-    outline-offset:-9px;
-    border-radius:6px;
-    padding:26px 18px 22px;
-    cursor:pointer;
-    transition:transform .25s ease, box-shadow .25s ease;
-    box-shadow:0 10px 24px rgba(75,20,38,.12);
-    text-align:center;
-  }
-  .stamp-card:hover, .stamp-card:focus-visible{ transform:translateY(-6px); box-shadow:0 18px 30px rgba(75,20,38,.2); }
-  .stamp-card.is-center{ transform:scale(1.06); }
-  .stamp-top{ display:flex; justify-content:space-between; font-size:.65rem; letter-spacing:.08em; color:var(--wine); opacity:.7; margin-bottom:10px;}
-  .stamp-icon{ font-size:2.1rem; color:var(--olive); margin:10px 0 14px; }
-  .stamp-title{ font-size:1.25rem; color:var(--wine); margin:0 0 6px; }
-  .stamp-desc{ font-family:Georgia,serif; font-size:.72rem; color:var(--ink); opacity:.65; margin:0 0 10px; line-height:1.4;}
-  .stamp-bottom{ font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--olive); opacity:.8; border-top:1px dashed rgba(75,20,38,.25); padding-top:8px; }
+  display:flex; gap:18px;
+  overflow-x:auto; scroll-snap-type:x mandatory;
+  padding:14px 8px 22px;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+
+.stamp-track::-webkit-scrollbar{ 
+  display:none; 
+}
+
+.stamp-card{
+  scroll-snap-align:center;
+  flex:0 0 auto;
+  width:min(70vw, 250px);
+  background:var(--cream);
+  border:9px dotted var(--paper);
+  outline:1px solid rgba(75,20,38,.15);
+  outline-offset:-9px;
+  border-radius:6px;
+  padding:26px 18px 22px;
+  cursor:pointer;
+  transition:transform .25s ease, box-shadow .25s ease;
+  box-shadow:0 10px 24px rgba(75,20,38,.12);
+  text-align:center;
+}
+
+.stamp-card:hover, .stamp-card:focus-visible{
+  transform:translateY(-6px); 
+  box-shadow:0 18px 30px rgba(75,20,38,.2); 
+}
+
+.stamp-card.is-center{ 
+  transform:scale(1.06); 
+}
+
+.stamp-top{ 
+  display:flex; 
+  justify-content:space-between; 
+  font-size:.65rem; 
+  letter-spacing:.08em; 
+  color:var(--wine); 
+  opacity:.7; 
+  margin-bottom:10px;
+}
+
+.stamp-icon{ 
+  font-size:2.1rem; 
+  color:var(--olive); 
+  margin:10px 0 14px; 
+}
+
+.stamp-title{ 
+  font-size:1.25rem; 
+  color:var(--wine); 
+  margin:0 0 6px; 
+}
+
+.stamp-desc{ font-family:Georgia,serif; font-size:.72rem; color:var(--ink); opacity:.65; margin:0 0 10px; line-height:1.4;}
+.stamp-bottom{ font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--olive); opacity:.8; border-top:1px dashed rgba(75,20,38,.25); padding-top:8px; }
 
   .track-arrow{
     position:absolute; top:50%; translate:0 -50%;
