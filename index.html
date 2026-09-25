@@ -58,6 +58,14 @@
 
         <div class="carousel-viewport" id="carouselViewport">
             <div class="stamp-track" id="stampTrack" role="list">
+                <article class="stamp-card" role="listitem" tabindex="0" data-open="entourage">
+                    <div class="stamp-top"><span>'26</span><span>4th</span></div>
+                    <i class="fa-solid fa-people-group stamp-icon"></i>
+                    <h3 class="stamp-title">Entourage</h3>
+                    <p class="stamp-desc">Meet our wedding party</p>
+                    <div class="stamp-bottom">Panganiban · Argoso</div>
+                </article>
+
                 <article class="stamp-card" role="listitem" tabindex="0" data-open="dress">
                     <div class="stamp-top"><span>'26</span><span>1st</span></div>
                     <i class="fa-solid fa-shirt stamp-icon"></i>
@@ -82,13 +90,6 @@
                     <div class="stamp-bottom">Panganiban · Argoso</div>
                 </article>
 
-                <article class="stamp-card" role="listitem" tabindex="0" data-open="entourage">
-                    <div class="stamp-top"><span>'26</span><span>4th</span></div>
-                    <i class="fa-solid fa-people-group stamp-icon"></i>
-                    <h3 class="stamp-title">Entourage</h3>
-                    <p class="stamp-desc">Meet our wedding party</p>
-                    <div class="stamp-bottom">Panganiban · Argoso</div>
-                </article>
             </div>
         </div>
 
@@ -100,6 +101,61 @@
         <span>Where love blooms</span><br>
         <span>Panganiban &amp; Argoso — December 15, 2026</span>
     </footer>
+
+    <!-- modal for entourage -->
+    <div class="modal-overlay" id="modal-entourage" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="entourageTitle">
+            <div class="modal-head">
+                <h3 id="entourageTitle">Wedding Entourage</h3>
+                <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="entourage-group">
+                <h4>Parents of the Groom</h4>
+                <p class="entourage-name">Josephine Panganiban</p>
+                <p class="entourage-name">Joselito Panganiban</p>
+            </div>
+
+            <div class="entourage-group">
+                <h4>Parents of the Bride</h4>
+                <p class="entourage-name">Sharin Pacleb</p>
+                <p class="entourage-name">Conrado Pacleb</p>
+            </div>
+
+            <div class="entourage-group">
+                <h4>Principal Sponsors</h4>
+                <div class="entourage-row"><span>Paul Panganiban</span><span>Cristina Panganiban</span></div>
+                <div class="entourage-row"><span>Ivan Rosal</span><span>Karina Mendoza-Rosal</span></div>
+                <div class="entourage-row"><span>Reynaldo Argoso</span><span>Ofelia Argoso</span></div>
+            </div>
+
+            <div class="entourage-group">
+                <h4>Best Man &amp; Maid of Honor</h4>
+                <div class="entourage-row"><span>John Michael Pampellona</span><span>Shannen Kyle Pacleb</span></div>
+            </div>
+
+            <div class="entourage-group">
+                <h4>Secondary Sponsors</h4>
+                <p class="entourage-sub">Veil</p>
+                <div class="entourage-row"><span>Jonna Vercaza</span><span>Felipe Panganiban Jr .</span></div>
+                <p class="entourage-sub">Candle</p>
+                <div class="entourage-row"><span>Collyn Kae Panganiban</span><span>Abemel Obordo</span></div>
+                <p class="entourage-sub">Cord</p>
+                <div class="entourage-row"><span>Jovilyn Carman</span><span>Shane Christian Pacleb</span></div>
+            </div>
+
+            <div class="entourage-group">
+                <h4>Coin &amp; Ring Bearer</h4>
+                <p class="entourage-name">Sean Dave Pacleb</p>
+                <h4>Bible Bearer</h4>
+                <p class="entourage-name">Shawn Maverick Pacleb</p>
+                <h4>Flower Girl</h4>
+                <p class="entourage-name">Shannia Ava Pacleb</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal for rsvp -->
 
     <!-- modal for dress code/timeline -->
     <div class="modal-overlay" id="modal-dress" aria-hidden="true">
@@ -174,60 +230,6 @@
         </div>
     </div>
 
-    <!-- modal for entourage -->
-    <div class="modal-overlay" id="modal-entourage" aria-hidden="true">
-        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="entourageTitle">
-            <div class="modal-head">
-                <h3 id="entourageTitle">Wedding Entourage</h3>
-                <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-
-            <div class="entourage-group">
-                <h4>Parents of the Groom</h4>
-                <p class="entourage-name">Josephine Panganiban</p>
-                <p class="entourage-name">Joselito Panganiban</p>
-            </div>
-
-            <div class="entourage-group">
-                <h4>Parents of the Bride</h4>
-                <p class="entourage-name">Sharin Pacleb</p>
-                <p class="entourage-name">Conrado Pacleb</p>
-            </div>
-
-            <div class="entourage-group">
-                <h4>Principal Sponsors</h4>
-                <div class="entourage-row"><span>Paul Panganiban</span><span>Cristina Panganiban</span></div>
-                <div class="entourage-row"><span>Ivan Rosal</span><span>Karina Mendoza-Rosal</span></div>
-                <div class="entourage-row"><span>Reynaldo Argoso</span><span>Ofelia Argoso</span></div>
-            </div>
-
-            <div class="entourage-group">
-                <h4>Best Man &amp; Maid of Honor</h4>
-                <div class="entourage-row"><span>John Michael Pampellona</span><span>Shannen Kyle Pacleb</span></div>
-            </div>
-
-            <div class="entourage-group">
-                <h4>Secondary Sponsors</h4>
-                <p class="entourage-sub">Veil</p>
-                <div class="entourage-row"><span>Jonna Vercaza</span><span>Felipe Panganiban Jr .</span></div>
-                <p class="entourage-sub">Candle</p>
-                <div class="entourage-row"><span>Collyn Kae Panganiban</span><span>Abemel Obordo</span></div>
-                <p class="entourage-sub">Cord</p>
-                <div class="entourage-row"><span>Jovilyn Carman</span><span>Shane Christian Pacleb</span></div>
-            </div>
-
-            <div class="entourage-group">
-                <h4>Coin &amp; Ring Bearer</h4>
-                <p class="entourage-name">Sean Dave Pacleb</p>
-                <h4>Bible Bearer</h4>
-                <p class="entourage-name">Shawn Maverick Pacleb</p>
-                <h4>Flower Girl</h4>
-                <p class="entourage-name">Shannia Ava Pacleb</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- modal for rsvp -->
     <div class="modal-overlay" id="modal-rsvp" aria-hidden="true">
         <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
             <div class="modal-head">
