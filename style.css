@@ -271,11 +271,11 @@ button{
 }
 
 .carousel-viewport{
-  max-width:980px;
+  max-width:1240px;
   margin:0 auto;
   overflow:hidden;
   touch-action:pan-y;
-  padding:18px 0 10px;
+  padding:18px 0 14px;
   cursor:grab;
 }
 .carousel-viewport.dragging{ cursor:grabbing; }
@@ -290,12 +290,12 @@ button{
 
 .stamp-card{
   flex:0 0 auto;
-  width:min(58vw, 230px);
-  margin:0 10px;
+  width:min(64vw, 250px);
+  margin:0 12px;
   background:var(--cream);
   border:none;
   border-radius:2px;
-  padding:24px 16px 20px;
+  padding:26px 18px 22px;
   cursor:pointer;
   transform:scale(.82);
   filter:brightness(.88) saturate(.75);
@@ -310,6 +310,16 @@ button{
   mask-repeat:no-repeat;
   -webkit-mask-size:100% 100%;
   mask-size:100% 100%;
+}
+
+@media (min-width:640px){
+  .stamp-card{ width:min(40vw, 320px); margin:0 16px; padding:30px 22px 24px; }
+}
+@media (min-width:900px){
+  .stamp-card{ width:min(28vw, 360px); margin:0 18px; padding:32px 24px 26px; }
+}
+@media (min-width:1280px){
+  .stamp-card{ width:400px; margin:0 20px; padding:36px 26px 28px; }
 }
 
 .stamp-card.is-active{
@@ -333,20 +343,20 @@ button{
 }
 
 .stamp-icon{ 
-  font-size:2.1rem; 
+  font-size:clamp(2.1rem, 1.6rem + 1vw, 2.8rem); 
   color:var(--olive); 
   margin:10px 0 14px; 
 }
 
 .stamp-title{ 
-  font-size:1.25rem; 
+  font-size:clamp(1.25rem, 1.05rem + .6vw, 1.6rem); 
   color:var(--wine); 
   margin:0 0 6px; 
 }
 
 .stamp-desc{ 
   font-family:Georgia,serif; 
-  font-size:.72rem; 
+  font-size:clamp(.72rem, .65rem + .3vw, .9rem); 
   color:var(--ink); 
   opacity:.65; 
   margin:0 0 10px; 
@@ -609,6 +619,7 @@ button{
 
 /* ---------- entourage modal ---------- */
 .entourage-group{
+  text-align:center;
   margin-bottom:20px;
   padding-bottom:16px;
   border-bottom:1px dashed rgba(75,20,38,.18);
@@ -637,15 +648,23 @@ button{
 }
 .entourage-row{
   display:flex;
-  justify-content:space-between;
+  justify-content:center;
   gap:12px;
   font-size:1.05rem;
   color:var(--ink);
   padding:4px 0;
 }
-.entourage-row span{ flex:1; text-align:center; }
-.entourage-row span:first-child{ text-align:right; padding-right:8px; border-right:1px solid rgba(75,20,38,.15); }
-.entourage-row span:last-child{ text-align:left; padding-left:8px; }
+.entourage-row span{
+  flex:1;
+  text-align:center;
+}
+.entourage-row span:first-child{
+  padding-right:8px;
+  border-right:1px solid rgba(75,20,38,.15);
+}
+.entourage-row span:last-child{
+  padding-left:8px;
+}
 
 /* ---------- RSVP extras ---------- */
 .reserved-line{
@@ -725,7 +744,7 @@ form.rsvp-form{
   gap:10px;
   flex-wrap:nowrap;
 }
-.attend-option{
+.rsvp-form .attend-option{
   flex:1;
   display:flex;
   align-items:center;
@@ -737,6 +756,7 @@ form.rsvp-form{
   background:#fff;
   transition:border-color .2s ease, background .2s ease;
   min-width:0;
+  margin-bottom:0; /* overrides the generic .rsvp-form label spacing rule */
 }
 .attend-option input{
   position:absolute;
@@ -760,6 +780,8 @@ form.rsvp-form{
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
+  flex:1 1 auto;
+  min-width:0;
 }
 
 .attend-yes.selected{
