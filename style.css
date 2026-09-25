@@ -133,6 +133,12 @@ button{
   width:min(90vw, 480px);
   filter:drop-shadow(0 22px 30px rgba(75,20,38,.22));
 }
+@media (min-width:640px){
+  .envelope-wrap{ width:min(65vw, 620px); }
+}
+@media (min-width:1024px){
+  .envelope-wrap{ width:min(40vw, 760px); }
+}
 
 .envelope-wrap img{ 
   width:100%; 
@@ -253,24 +259,28 @@ button{
   width:min(58vw, 230px);
   margin:0 10px;
   background:var(--cream);
-  border:9px dotted var(--paper);
-  outline:1px solid rgba(75,20,38,.15);
-  outline-offset:-9px;
-  border-radius:6px;
+  border:none;
+  border-radius:2px;
   padding:24px 16px 20px;
   cursor:pointer;
   transform:scale(.82);
-  opacity:.55;
-  transition:transform .4s cubic-bezier(.22,.9,.3,1), opacity .4s ease, box-shadow .4s ease;
+  filter:brightness(.88) saturate(.75);
+  transition:transform .4s cubic-bezier(.22,.9,.3,1), filter .4s ease, box-shadow .4s ease;
   box-shadow:0 8px 18px rgba(75,20,38,.1);
   text-align:center;
   user-select:none;
   -webkit-user-drag:none;
+  /* Perforated stamp-edge is applied per-card as an inline mask-image by script.js,
+     sized to the card's real rendered pixels so the notches never stretch. */
+  -webkit-mask-repeat:no-repeat;
+  mask-repeat:no-repeat;
+  -webkit-mask-size:100% 100%;
+  mask-size:100% 100%;
 }
 
 .stamp-card.is-active{
   transform:scale(1.12);
-  opacity:1;
+  filter:none;
   box-shadow:0 18px 32px rgba(75,20,38,.22);
   position:relative;
   z-index:3;
