@@ -307,7 +307,7 @@ document.querySelectorAll('.attend-option').forEach(option => {
 })();
 
 // ---------- RSVP submit ----------
-const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwy4bzpRe4Et88TG7BKcsapHqXNxL2Zl3dBl5v0daAmutpJyQU1xdOaxSX0D1B70lz-Gg/exec';
+const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwunxxs2GKQuYdLvInU4lWLX8Sf56htbdQY1BfxvvTfsfAMq8h87l5IMEqY9XwTzEaPQw/exec';
 const rsvpForm = document.getElementById('rsvpForm');
 
 rsvpForm?.addEventListener('submit', async (e) => {
