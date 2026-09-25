@@ -1,3 +1,55 @@
+// ---------- background music: loop + autoplay (with browser-policy fallback) ----------
+(function initMusic() {
+  const bgMusic = document.getElementById('bgMusic');
+  const toggleBtn = document.getElementById('musicToggle');
+  if (!bgMusic) return;
+
+  bgMusic.loop = true;
+  bgMusic.volume = 0.55;
+
+  function setPlayingUI(isPlaying) {
+    if (!toggleBtn) return;
+    toggleBtn.classList.toggle('playing', isPlaying);
+    toggleBtn.setAttribute('aria-label', isPlaying ? 'Pause background music' : 'Play background music');
+  }
+
+  function attemptPlay() {
+    const p = bgMusic.play();
+    if (p && typeof p.then === 'function') {
+      p.then(() => setPlayingUI(true)).catch(() => setPlayingUI(false));
+    }
+  }
+
+  // Try immediately on load. Most mobile/desktop browsers block audible
+  // autoplay before any user interaction, so this will often be silently
+  // rejected — that's expected and handled by the fallback below.
+  attemptPlay();
+
+  // The moment the visitor taps/clicks/presses a key anywhere on the page,
+  // try again. Browsers count that as the "user gesture" needed to unlock
+  // audio, so the song starts as soon as they begin interacting with the site.
+  const unlock = () => {
+    if (bgMusic.paused) attemptPlay();
+    document.removeEventListener('pointerdown', unlock);
+    document.removeEventListener('keydown', unlock);
+  };
+  document.addEventListener('pointerdown', unlock, { once: true });
+  document.addEventListener('keydown', unlock, { once: true });
+
+  // Manual play/pause control.
+  toggleBtn?.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      attemptPlay();
+    } else {
+      bgMusic.pause();
+      setPlayingUI(false);
+    }
+  });
+
+  bgMusic.addEventListener('play', () => setPlayingUI(true));
+  bgMusic.addEventListener('pause', () => setPlayingUI(false));
+})();
+
 // ---------- nav actions (home / map / rsvp) ----------
 document.querySelectorAll('[data-nav]').forEach(btn => {
   btn.addEventListener('click', () => {

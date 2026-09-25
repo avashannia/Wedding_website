@@ -101,7 +101,41 @@ button{
     color:var(--cream); 
 }
 
-/* top-center fixed nav, always visible */
+/* ---------- background music toggle ---------- */
+.music-toggle{
+  position:fixed;
+  right:calc(16px + env(safe-area-inset-right,0px));
+  bottom:calc(16px + env(safe-area-inset-bottom,0px));
+  z-index:80;
+  width:46px; height:46px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  background:var(--cream);
+  color:var(--wine);
+  font-size:1.05rem;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 18px rgba(75,20,38,.22), 0 1px 0 rgba(255,255,255,.6) inset;
+  transition:background .2s ease, color .2s ease, transform .2s ease;
+}
+.music-toggle:hover{ transform:translateY(-1px); }
+.music-toggle:focus-visible{ outline:2px solid var(--olive); outline-offset:2px; }
+.music-toggle.playing{
+  background:var(--wine);
+  color:var(--cream);
+}
+.music-toggle.playing i{
+  animation:music-pulse 1.6s ease-in-out infinite;
+}
+@keyframes music-pulse{
+  0%, 100%{ transform:scale(1); }
+  50%{ transform:scale(1.15); }
+}
+@media (prefers-reduced-motion:reduce){
+  .music-toggle.playing i{ animation:none; }
+}
+
+/* ---------- top-center fixed nav, always visible ---------- */
 .nav-top{
   position:fixed;
   top:calc(14px + env(safe-area-inset-top,0px));
