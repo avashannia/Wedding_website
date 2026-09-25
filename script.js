@@ -2,7 +2,7 @@
   const heroEl = document.getElementById('home');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-    fixedNav.classList.toggle('visible', !e.isIntersecting);
+    /*fixedNav.classList.toggle('visible', !e.isIntersecting);*/
 });
     }, { threshold: 0.15 });
     io.observe(heroEl);
@@ -71,7 +71,7 @@
       });
     });
 
-  // stamp track arrows 
+  /* stamp track arrows 
   const track = document.getElementById('stampTrack');
   document.getElementById('prevBtn').addEventListener('click', () => track.scrollBy({ left: -280, behavior: 'smooth' }));
   document.getElementById('nextBtn').addEventListener('click', () => track.scrollBy({ left: 280, behavior: 'smooth' }));
@@ -107,5 +107,50 @@
       form.reset();
     } catch (err) {
       status.textContent = 'Something went wrong. Please try again.';
+    }
+  }); */
+
+  // stamp track arrows 
+  const track = document.getElementById('stampTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  if (track) {
+    prevBtn?.addEventListener('click', () => track.scrollBy({ left: -280, behavior: 'smooth' }));
+    nextBtn?.addEventListener('click', () => track.scrollBy({ left: 280, behavior: 'smooth' }));
+  }
+
+  // rsvp submit 
+  const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw_JWnf078a3iN_aPiOdV_GrerXcGy8Raxvsh9XwFGOQb996B4f96_3FFP7kP-VgPnl-g/exec';
+  const rsvpForm = document.getElementById('rsvpForm');
+
+  rsvpForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const status = document.getElementById('rsvpStatus');
+    const data = {
+      fullName: form.fullName.value,
+      attending: form.attending.value,
+      guestCount: form.guestCount.value,
+      notes: form.notes.value,
+      submittedAt: new Date().toISOString()
+    };
+
+    if (status) {
+      status.textContent = 'Sending…';
+      status.classList.add('show');
+    }
+
+    try {
+      await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (status) status.textContent = 'Thank you — your RSVP has been received.';
+      form.reset();
+    } catch (err) {
+      if (status) status.textContent = 'Something went wrong. Please try again.';
     }
   });
